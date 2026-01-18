@@ -418,9 +418,7 @@ class Game:
             return
 
         # Выбор первого экзамена
-        print("\n" + "=" * 50)
         print("СЕССИЯ НАЧИНАЕТСЯ!")
-        print("=" * 50)
         print(f"\nКакие экзамены осталось сдать: {', '.join(exams_to_take)}")
 
         if len(exams_to_take) > 1:
@@ -442,9 +440,7 @@ class Game:
         self.current_player.check_scholarship()
 
         # Показываем текущий статус
-        print("\n" + "=" * 50)
         print("ТЕКУЩИЙ СТАТУС")
-        print("=" * 50)
         print(f"Репутация: {self.current_player.reputation}")
         print(f"Стипендия: {'сохранена' if self.current_player.scholarship else 'потеряна'}")
         print(f"Экзамены: {self.current_player.exams}")
@@ -461,9 +457,7 @@ class Game:
 
         # Проверка условий окончания игры
         if not self.current_player.scholarship:
-            print("\n" + "=" * 50)
             print("ИГРА ОКОНЧЕНА")
-            print("=" * 50)
             print("\n Вы потеряли стипендию!")
             print("Попробуйте еще раз, возможно в следующий раз повезет больше.")
             return
@@ -474,9 +468,7 @@ class Game:
             if retake == "да":
                 if self.retake_exam():
                     # Показываем финальный статус
-                    print("\n" + "=" * 50)
                     print("ФИНАЛЬНЫЙ РЕЗУЛЬТАТ")
-                    print("=" * 50)
                     print(f"Репутация: {self.current_player.reputation}")
                     print(f"Стипендия: {'сохранена' if self.current_player.check_scholarship() else 'потеряна'}")
                     print(f"Экзамены: {self.current_player.exams}")
@@ -489,18 +481,15 @@ class Game:
                 print("\nВы решили не пересдавать. Игра завершена.")
         else:
             # Показываем финальный статус
-            print("\n" + "=" * 50)
             print("ФИНАЛЬНЫЙ РЕЗУЛЬТАТ")
-            print("=" * 50)
             if self.current_player.check_scholarship():
                 print("\n ПОЗДРАВЛЯЕМ! ВЫ СОХРАНИЛИ СТИПЕНДИЮ! ")
             else:
                 print("\n Вы не смогли сохранить стипендию. Попробуйте еще раз!")
 
     def main_menu(self):
-        """Главное меню игры"""
+        """Главное меню"""
         while True:
-            print("\n" + "=" * 50)
             print("ГЛАВНОЕ МЕНЮ")
             print("=" * 50)
             print("1. Новая игра")
@@ -544,4 +533,5 @@ def main():
 
 
 if __name__ == "__main__":
+
     main()
